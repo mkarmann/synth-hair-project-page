@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Privacy Notice for the SynthHair research project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Notice: SynthHair</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Privacy Notice: SynthHair</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="./index.html">← Back to project page</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="content has-text-justified">
+
+      <h2 class="title is-3">Overview</h2>
+      <p>
+        This privacy notice explains how the SynthHair research project processes personal
+        data. Our research focuses on computer vision, specifically developing machine
+        learning models capable of hair matting (separating facial hair from backgrounds)
+        and predicting hair properties such as depth, growth direction, and hair type
+        (beard, scalp hair, eyebrows, eyelashes, mustache).
+      </p>
+      <p>
+        To conduct this research, we use standard, pre-existing, third-party academic
+        datasets of images. Because these datasets contain thousands of images originally
+        sourced from the internet, they may contain personal information (such as faces).
+      </p>
+
+      <h2 class="title is-3">Data Controller and Lawful Basis</h2>
+      <p>
+        University of Oxford is the Data Controller with respect to your personal data and
+        determines how it is used in this research. The University processes your personal
+        data for the purpose of the scientific research outlined above. Research is a task
+        performed in the public interest.
+      </p>
+
+      <h2 class="title is-3">How the Data is Processed</h2>
+      <p>
+        The data in this project is used strictly for non-commercial scientific research.
+      </p>
+      <ol>
+        <li>
+          <strong>Synthetic Data Generation:</strong> We extract 2D/3D facial expression
+          marker points (landmarks) from approximately 1,000 images in the AffectNet
+          dataset. These mathematical points are non-identifiable and cannot be mapped back
+          to the original person. We use these marker points to animate digital
+          &ldquo;MetaHumans&rdquo; to create a 100% synthetic dataset of faces and hair,
+          which is then composed onto generic background images.
+        </li>
+        <li>
+          <strong>Model Evaluation:</strong> We evaluate the performance of our models by
+          testing them on existing, publicly available datasets containing real human faces
+          (see the list below). We also train internal evaluation models on these real
+          datasets purely to compare the performance differences between training on real
+          versus synthetic data.
+        </li>
+      </ol>
+      <p>
+        The algorithms in this project are not designed to identify individuals or extract
+        biometric identification data (such as facial recognition).
+      </p>
+
+      <h2 class="title is-3">Why the Data is Processed</h2>
+      <p>
+        Modern machine learning techniques require standardized images to learn and to
+        benchmark performance. Using these pre-existing third-party datasets is the only
+        way to measure our algorithm&rsquo;s accuracy, compare it against previous scientific
+        work, and demonstrate measurable progress in scientific publications.
+      </p>
+
+      <h2 class="title is-3">Who is Using the Data</h2>
+      <p>
+        The data is used exclusively by researchers affiliated with the SynthHair project at
+        the University of Oxford. The raw data is stored securely on local institutional
+        servers and access is strictly restricted to affiliated researchers. No raw personal
+        data is transferred internationally.
+      </p>
+
+      <h2 class="title is-3">What Data is Shared</h2>
+      <p>
+        We do not share, publish, or distribute the raw, original datasets containing
+        personal data, nor do we release any of the internal evaluation models trained on
+        real data.
+      </p>
+      <p>To support open science, we will publicly release:</p>
+      <ul>
+        <li>The fully synthetic dataset generated by the project (which contains no personal data).</li>
+        <li>The final machine learning model trained on the synthetic dataset.</li>
+        <li>Aggregate statistics and performance metrics in scientific papers.</li>
+      </ul>
+
+      <h2 class="title is-3">Data Retention</h2>
+      <p>We only keep personal data for as long as necessary:</p>
+      <ul>
+        <li>
+          <strong>Publicly Available Datasets (Real Images):</strong> Kept only as long as
+          necessary for the research and for up to three years to support verification and
+          reproducibility of the research results. Where possible, datasets will be deleted
+          and re-downloaded from their original sources if needed; otherwise, they may be
+          retained in secure, restricted-access storage during this period.
+        </li>
+        <li>
+          <strong>Intermediate Data (Facial Landmarks):</strong> Retained only during the
+          dataset creation phase and permanently deleted once the synthetic dataset is
+          rendered.
+        </li>
+        <li>
+          <strong>Synthetic Dataset &amp; Synthetic Models:</strong> Retained long-term
+          (10+ years) for research reproducibility, as these do not contain personal data.
+        </li>
+      </ul>
+
+      <h2 class="title is-3">Your Rights and How to Request Erasure</h2>
+      <p>
+        Under the UK GDPR, you have rights regarding your personal data, including the right
+        to be informed, access, rectification, erasure, restrict processing, and to object.
+        If you think your personal information is used in the project and wish it to be
+        erased, please contact the University&rsquo;s central Information Compliance Team:
+      </p>
+      <ul>
+        <li>Email Address: <a href="mailto:information.compliance@admin.ox.ac.uk">information.compliance@admin.ox.ac.uk</a></li>
+        <li>Email Subject: SynthHair Data Erasure Request - Department of Engineering</li>
+        <li>Clearly specify which image(s) you would like us to erase.</li>
+      </ul>
+      <p>
+        After verifying your request, we will delete the relevant image(s) or video(s) from
+        our system and stop using them in the research.
+      </p>
+      <p>
+        <strong>Note:</strong> Because we use existing third-party datasets and do not hold
+        names or metadata linked to the images, we may require a reference image or specific
+        file name from you to locate and delete your data. Furthermore, while we will delete
+        your data from our local project servers, we cannot remove it from the original
+        third-party source dataset.
+      </p>
+
+      <h2 class="title is-3">List of Datasets Used in this Project</h2>
+      <p>This project utilizes the following pre-existing datasets:</p>
+      <ul>
+        <li>AffectNet (used for non-identifiable facial expression extraction)</li>
+        <li>Backgrounds of Background Matting V2 (for background compositions)</li>
+        <li>CelebA</li>
+        <li>CelebAMask-HQ</li>
+        <li>Clothing Dataset (for background compositions)</li>
+        <li>DIS5K</li>
+        <li>Face Synthetics</li>
+        <li>Figaro-1k</li>
+        <li>HHM2K</li>
+        <li>HiSa</li>
+        <li>K-Hairstyle</li>
+        <li>P3M-10k</li>
+        <li>PPM-100</li>
+        <li>ThinObject-5K</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            <a href="./index.html">← Back to SynthHair project page</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
