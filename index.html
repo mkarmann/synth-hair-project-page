@@ -1,89 +1,202 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description"
-        content="SynthHair: Advancing Hair Matting with Synthetic Data. A research project at the University of Oxford.">
-  <meta name="keywords" content="SynthHair, Hair Matting, Synthetic Data, Computer Vision">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SynthHair: Advancing Hair Matting with Synthetic Data</title>
+  <title>SynthHair: Leveraging MetaHumans for a High-Quality 4K Hair Matting Dataset</title>
+  <meta name="description"
+        content="SynthHair: 16,000 synthetic 4K portraits with soft hair alpha, hair categories, growth direction and depth labels. A research project at the University of Oxford.">
+  <meta name="keywords" content="SynthHair, Hair Matting, Synthetic Data, MetaHuman, Computer Vision, Dataset">
+  <meta property="og:title" content="SynthHair">
+  <meta property="og:description" content="A high-quality 4K hair matting dataset built from MetaHumans.">
+  <meta property="og:image" content="./static/media/hero/rgb.webp">
+  <meta name="theme-color" content="#08090b">
+  <link rel="icon" href="./static/favicon.svg" type="image/svg+xml">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
-
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <link rel="preload" href="./static/fonts/inter-tight-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="./static/css/site.css">
+  <script defer src="./static/media/explorer/manifest.js"></script>
+  <script defer src="./static/js/site.js"></script>
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            SynthHair: Advancing Hair Matting with Synthetic Data
-          </h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">University of Oxford</span>
+<nav class="nav" id="nav">
+  <a class="nav-brand" href="#top">SynthHair</a>
+  <div class="nav-links">
+    <a href="#frame">Labels</a>
+    <a href="#explorer">Explorer</a>
+    <a href="https://github.com/mkarmann/synth-hair" target="_blank" rel="noopener">Code</a>
+    <a class="nav-cta" href="https://doi.org/10.7910/DVN/KTSTEW" target="_blank" rel="noopener">Dataset ↗</a>
+  </div>
+</nav>
+
+<header class="landing" id="top">
+  <div class="wall" id="wall" aria-hidden="true"></div>
+  <div class="landing-shade" aria-hidden="true"></div>
+
+  <div class="landing-content">
+    <div class="eyebrow reveal">
+      <span class="pill">NeurIPS 2026</span>
+      <span>Datasets &amp; Benchmarks</span>
+    </div>
+    <h1 class="title reveal" style="--d: 80ms">SynthHair</h1>
+    <p class="subtitle reveal" style="--d: 160ms">
+      Leveraging MetaHumans for a High-Quality 4K Hair&nbsp;Matting&nbsp;Dataset
+    </p>
+    <p class="authors reveal" style="--d: 240ms">
+      Markus Karmann · Shile Li · Qi Zhang · Peng-Tao Jiang · Bo Li ·
+      Puneet K. Dokania · Philip Torr · Onay Urfalioglu
+    </p>
+    <div class="actions reveal" style="--d: 320ms">
+      <a class="btn btn-primary" href="https://doi.org/10.7910/DVN/KTSTEW" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>
+        Dataset
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/mkarmann/synth-hair" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        Code
+      </a>
+      <span class="btn btn-ghost is-disabled" title="Coming soon">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7zM14 3v5h5"/></svg>
+        Paper <small>soon</small>
+      </span>
+      <a class="btn btn-ghost" href="#explorer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg>
+        Explore results
+      </a>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#frame" aria-label="Scroll down"><span></span></a>
+</header>
+
+<main>
+
+  <section class="section" id="frame">
+    <div class="section-head">
+      <h2>Four labels for every 4K portrait</h2>
+      <p class="lede">
+        Every SynthHair portrait is rendered at 4096 × 4096 and comes with four types of labels:
+        hair matte, hair category, growth direction and depth. Hover a label to open its slice.
+      </p>
+    </div>
+
+    <div class="frame-grid">
+      <div class="slicer" id="slicer">
+        <img class="slice" data-layer="0" src="./static/media/hero/rgb.webp" alt="Rendered MetaHuman portrait">
+        <img class="slice" data-layer="1" src="./static/media/hero/matte.webp" alt="Hair matte">
+        <img class="slice" data-layer="2" src="./static/media/hero/categories.webp" alt="Hair category mattes">
+        <img class="slice" data-layer="3" src="./static/media/hero/growth.webp" alt="3D hair growth direction">
+        <img class="slice" data-layer="4" src="./static/media/hero/depth.webp" alt="Depth">
+        <svg class="slice-lines" id="slice-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div class="slice-tags" id="slice-tags" aria-hidden="true"></div>
+      </div>
+
+      <ol class="legend" id="legend">
+        <li data-layer="0">
+          <span class="legend-swatch sw-rgb"></span>
+          <div><b>Image</b><span>Rendered MetaHuman portrait, RGBA.</span></div>
+        </li>
+        <li data-layer="1">
+          <span class="legend-swatch sw-matte"></span>
+          <div><b>Hair matte</b><span>Soft alpha matte of all hair, not a binary mask.</span></div>
+        </li>
+        <li data-layer="2">
+          <span class="legend-swatch sw-cat"></span>
+          <div><b>Hair category</b><span>Scalp · eyebrows · eyelashes · mustache · beard.</span></div>
+        </li>
+        <li data-layer="3">
+          <span class="legend-swatch sw-growth"></span>
+          <div><b>Growth direction</b><span>3D strand direction, root to tip.</span></div>
+        </li>
+        <li data-layer="4">
+          <span class="legend-swatch sw-depth"></span>
+          <div><b>Depth</b><span>Dense per-pixel depth, including hair.</span></div>
+        </li>
+      </ol>
+    </div>
+
+    <dl class="facts">
+      <div><dt data-count="16000">16,000</dt><dd>portraits at 4096 × 4096</dd></div>
+      <div><dt data-count="43">43</dt><dd>MetaHuman identities, disjoint train / test</dd></div>
+      <div><dt data-count="5">5</dt><dd>hair categories with soft mattes</dd></div>
+      <div><dt data-count="4">4</dt><dd>types of labels: hair matte, category, growth direction &amp; depth</dd></div>
+    </dl>
+  </section>
+
+  <section class="section" id="explorer">
+    <div class="section-head">
+      <h2>Predictions on AI-generated portraits</h2>
+      <p class="lede">
+        The same model architecture trained on four different datasets, applied to 4K AI-generated portraits.
+        Drag the divider to compare, or switch to all models to zoom into the mattes side by side.
+      </p>
+    </div>
+
+    <div class="explorer">
+      <div class="stage-wrap">
+        <div class="stage" id="stage" tabindex="0" aria-label="Prediction viewer">
+          <div class="stage-single" id="stage-single">
+            <img class="stage-img" id="img-base" alt="">
+            <div class="stage-pred" id="pred-clip"><img class="stage-img" id="img-pred" alt=""></div>
+            <div class="divider" id="divider"><span class="divider-knob"><svg viewBox="0 0 24 24"><path d="m9 6-6 6 6 6M15 6l6 6-6 6"/></svg></span></div>
+            <span class="stage-tag tag-left">Image</span>
+            <span class="stage-tag tag-right" id="tag-right">Prediction</span>
+          </div>
+          <div class="stage-grid" id="stage-grid"></div>
+          <div class="stage-loading" id="stage-loading"><span></span></div>
+        </div>
+        <div class="stage-caption">
+          <span class="mono" id="caption-meta">AI-generated image · 4096 × 3072</span>
+        </div>
+      </div>
+
+      <aside class="controls">
+        <div class="control">
+          <div class="control-label">View</div>
+          <div class="segmented" id="view-toggle" role="tablist">
+            <button class="is-active" data-view="single">Slider</button>
+            <button data-view="grid">All models</button>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">About</h2>
-        <div class="content has-text-justified">
-          <p>
-            SynthHair is an ongoing research project on computer vision for hair matting:
-            separating hair from the background and predicting hair properties such as
-            depth, growth direction, and hair type (scalp hair, eyebrows, eyelashes,
-            mustache, and beard).
-          </p>
-          <p>
-            The project investigates how large-scale <em>synthetic</em> data can advance
-            these tasks, and is currently under active development. Materials, results,
-            and releases will be added here as the work progresses.
-          </p>
-          <p>
-            This research uses pre-existing third-party academic image datasets that may
-            contain personal data (such as faces). Please see our
-            <a href="./privacy.html">Privacy Notice</a> for details on how personal data
-            is processed, retained, and how to request erasure.
-          </p>
+        <div class="control">
+          <div class="control-label">Image <span class="mono hint">← →</span></div>
+          <div class="thumbs" id="thumbs"></div>
         </div>
-      </div>
+
+        <div class="control" id="model-control">
+          <div class="control-label">Trained on <span class="mono hint">1 – 4</span></div>
+          <div class="models" id="models"></div>
+          <p class="note">SIPQ (soft isoperimetric quotient) measures how much fine structure a matte resolves. Higher means more strand detail.</p>
+        </div>
+
+        <div class="control" id="label-control">
+          <div class="control-label">Label</div>
+          <div class="chips" id="labels"></div>
+          <p class="note" id="label-note"></p>
+        </div>
+      </aside>
     </div>
-  </div>
-</section>
+
+  </section>
+
+  <section class="section section-narrow" id="privacy">
+    <p class="about-small">
+      This research uses pre-existing third-party academic image datasets that may contain personal
+      data (such as faces). Please see our <a href="./privacy.html">Privacy Notice</a> for details on how
+      personal data is processed, retained, and how to request erasure.
+    </p>
+  </section>
+
+</main>
 
 <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content has-text-centered">
-          <p>
-            <a href="./privacy.html">Privacy Notice</a>
-          </p>
-          <p>
-            This website is adapted from the
-            <a href="https://nerfies.github.io">Nerfies</a> project page template
-            and is licensed under a
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-              Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <span class="nav-brand">SynthHair</span>
+  <span>University of Oxford</span>
+  <a href="./privacy.html">Privacy Notice</a>
+  <a href="https://github.com/mkarmann/synth-hair" target="_blank" rel="noopener">Code</a>
+  <a href="https://doi.org/10.7910/DVN/KTSTEW" target="_blank" rel="noopener">Dataset · CC BY-NC 4.0</a>
 </footer>
 
 </body>
