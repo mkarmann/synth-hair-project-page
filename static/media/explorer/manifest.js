@@ -61,27 +61,6 @@ window.EXPLORER = {
       }
     },
     {
-      "slug": "p2",
-      "title": "Rainbow hair",
-      "prompt": "A person with rainbow-colored hair vlogging themselves in front…",
-      "size": [
-        4096,
-        3072
-      ],
-      "zoom": [
-        0.3,
-        0.15,
-        0.1,
-        0.1
-      ],
-      "sipq": {
-        "ours": 31.3,
-        "hisa": 30.1,
-        "figaro": 9.2,
-        "celeba": 5.1
-      }
-    },
-    {
       "slug": "p3",
       "title": "Buzz cut",
       "prompt": "A South Asian man with a short buzzed haircut where individual h…",
@@ -104,7 +83,7 @@ window.EXPLORER = {
     },
     {
       "slug": "p4",
-      "title": "Wind-blown ginger",
+      "title": "Wind-blown hair",
       "prompt": "A person with messy, wind-blown ginger hair where every stray st…",
       "size": [
         4096,
@@ -120,7 +99,7 @@ window.EXPLORER = {
     },
     {
       "slug": "p5",
-      "title": "Twists & beard",
+      "title": "Full beard",
       "prompt": "A sharp, high-resolution portrait of an older African man in a s…",
       "size": [
         4096,

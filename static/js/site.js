@@ -285,7 +285,7 @@
     const data = window.EXPLORER;
     if (!data) return;
     const LABELS = [
-      { key: 'alpha', name: 'Hair matte', all: true },
+      { key: 'alpha', name: 'Scalp hair matte', all: true },
       { key: 'categories', name: 'Hair category' },
       { key: 'orientation', name: '2D orientation' },
       { key: 'depth', name: 'Depth' },
@@ -300,7 +300,7 @@
       grid: 'Hair mattes of all four models side by side. Hover to zoom all of them at the same spot.',
     };
 
-    const state = { ex: 1, model: 'ours', label: 'alpha', view: 'single', split: 0.5 };
+    const state = { ex: 0, model: 'ours', label: 'alpha', view: 'single', split: 0.5 };
     const stage = $('#stage');
     const imgBase = $('#img-base');
     const imgPred = $('#img-pred');
